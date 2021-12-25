@@ -1,0 +1,58 @@
+{
+  "homeheader": {
+    "speciality": "Speciality",
+    "searchdoctor": "Find a doctor by speciality",
+    "health-facility": "Facility",
+    "select-room": "Select clinic",
+    "doctor": "Doctor",
+    "select-doctor": "Choose Doctor",
+    "package": "Package",
+    "general-health-check": "General health check",
+    "help": "Help",
+    "vi": "Vietnamese",
+    "en": "English",
+    "welcome": "Welcome, "
+  },
+  "menu": {
+    "system": {
+      "header": "System",
+      "system-administrator": {
+        "header": "System Administrator",
+        "user-manage": "User manage",
+        "user-redux": "User Redux",
+        "register-package-group-or-account": "Register service package for group/account"
+      },
+      "system-parameter": {
+        "header": "System-parameter"
+      }
+    },
+    "admin": {
+      "manage-user": "User",
+      "manage-doctor": "Doctor",
+      "manage-admin": "Admin",
+      "crud": "CRUD user",
+      "crud-redux": "CRUD Redux",
+      "clinic": "Clinic",
+      "manage-clinic": "Manage Clinic",
+      "specialty": "Specialty",
+      "manage-specialty": "Manage Specialty",
+      "handbook": "Handbook",
+      "manage-handbook": "Manage Handbook"
+    }
+  },
+  "manage-user": {
+    "add": "Add new User",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone Number",
+    "address": "Address",
+    "gender": "gender",
+    "position": "Position",
+    "roleID": "Role",
+    "img": "Image",
+    "save": "Add",
+    "edit": "Save change"
+  }
+}

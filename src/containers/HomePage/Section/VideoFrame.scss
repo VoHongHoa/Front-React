@@ -1,0 +1,26 @@
+.section-videoframe {
+  height: 500px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(225, 216, 233));
+  .section-header {
+    padding-left: 20px;
+  }
+  .section-content {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    .section-left {
+      width: 50%;
+    }
+    .section-right {
+      width: 50%;
+      .videoframe-text {
+        font-size: 15px;
+        text-align: justify;
+        font-style: italic;
+      }
+    }
+  }
+}

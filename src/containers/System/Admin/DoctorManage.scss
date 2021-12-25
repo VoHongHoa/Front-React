@@ -1,0 +1,36 @@
+.manage-doctor-container {
+  .save-content-doctor {
+    margin-top: 10px;
+    border: none;
+    background: blue;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  .save-change-content-doctor {
+    margin-top: 10px;
+    border: none;
+    background: yellow;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
+    color: black;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  //   .more-info {
+  //     display: flex;
+  //     .content-right {
+  //       .text-area {
+  //       }
+  //     }
+  //   }
+}

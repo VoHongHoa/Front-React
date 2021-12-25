@@ -1,0 +1,85 @@
+.login-background {
+  height: 100vh;
+  //background: rgb(34, 193, 195);
+  background: linear-gradient(
+    135deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+  font-family: "work sans";
+  position: relative;
+
+  .login-container {
+    width: 400px;
+    height: 450px;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    top: 20%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .login-content {
+    margin: 15px;
+
+    .textLogin {
+      font-weight: bold;
+      font-size: 60px;
+      padding-top: 10px;
+    }
+
+    .login-input {
+      margin-bottom: 10px;
+      .custom-password {
+        position: relative;
+
+        i {
+          position: absolute;
+          float: right;
+          right: 5px;
+          top: 10px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .btn-div {
+      .btn-login {
+        width: 100%;
+        text-align: center;
+        height: 30px;
+        outline: none;
+        border: none;
+        border-radius: 15px;
+        background: linear-gradient(
+          135deg,
+          rgba(34, 193, 195, 1) 0%,
+          rgba(253, 187, 45, 1) 100%
+        );
+        color: white;
+        font-size: 20px;
+      }
+    }
+    .forgot-password {
+      font-size: 10px;
+    }
+
+    .other-login {
+      text-align: center;
+      .google-icon {
+        font-size: 30px;
+        margin-right: 5px;
+      }
+
+      .facebook-icon {
+        font-size: 30px;
+        margin-left: 10px;
+      }
+    }
+  }
+}

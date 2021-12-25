@@ -1,0 +1,24 @@
+.img-container {
+  display: flex;
+  gap: 20px;
+  .load-img {
+    // border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+    align-items: center;
+    border-radius: 3px;
+    height: 100%;
+    width: 30%;
+    cursor: pointer;
+  }
+  .preview-image {
+    width: 70%;
+    height: 80px;
+    border: 1px solid grey;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+}

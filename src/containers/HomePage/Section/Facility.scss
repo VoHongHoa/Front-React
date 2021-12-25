@@ -1,0 +1,50 @@
+.section-facility {
+  margin-top: 20px;
+  background: linear-gradient(to right, rgb(225, 216, 233), rgba(255, 0, 0, 0));
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 20px;
+    padding-top: 20px;
+    button {
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+    button:hover {
+      background-color: yellow;
+    }
+  }
+  .facility-content {
+    height: 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .customize {
+      text-align: center;
+      .img-customize {
+        height: 200px;
+        background: url("../../../assets/speicalty1.jpg") center center
+          no-repeat;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 24px;
+      }
+    }
+    .slick-slider {
+      height: 80% !important;
+      width: 90% !important;
+      .slick-list {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .slick-prev:before,
+      .slick-next:before {
+        color: black;
+        font-size: 30px;
+      }
+    }
+  }
+}
