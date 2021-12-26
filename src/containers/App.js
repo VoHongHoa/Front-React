@@ -14,6 +14,7 @@ import Login from "./Auth/Login";
 import System from "../routes/System";
 import HomePage from "./HomePage/HomePage";
 import DetailDoctor from "./Paitient/Doctor/DetailDoctor";
+import Doctor from "../routes/Doctor";
 import { CustomToastCloseButton } from "../components/CustomToast";
 import "./App.scss";
 import CustomScrollbars from "../components/CustomScrollbars";
@@ -51,6 +52,10 @@ class App extends Component {
                   <Route
                     path={path.SYSTEM}
                     component={userIsAuthenticated(System)}
+                  />
+                  <Route
+                    path={path.DOCTOR}
+                    component={userIsAuthenticated(Doctor)}
                   />
                   <Route path={path.HOMEPAGE} exact component={HomePage} />
                   <Route path={path.DETAI_DOCTOR} component={DetailDoctor} />
