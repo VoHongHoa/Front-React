@@ -57,5 +57,12 @@
     "img": "Image",
     "save": "Add",
     "edit": "Save change"
+  },
+  "manage-schedule": {
+    "title": " Manage Doctor Schedule ",
+    "select-doctor": "Choose a Doctor",
+    "select-date": "Choose date",
+    "select-time": "Choose time",
+    "save": "Save Schedule "
   }
 }

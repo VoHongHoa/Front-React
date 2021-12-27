@@ -57,5 +57,12 @@
     "img": "Ảnh",
     "save": "Thêm",
     "edit": "Lưu thay đổi"
+  },
+  "manage-schedule": {
+    "title": "Quản lý kế hoạch khám bệnh",
+    "select-doctor": "Chọn bác sĩ",
+    "select-date": "Chọn ngày",
+    "select-time": "Chọn khung giờ",
+    "save": "Lưu lịch"
   }
 }

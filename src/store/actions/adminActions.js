@@ -250,3 +250,28 @@ export const actionSaveDoctorFailded = () => ({
 export const actionSaveDoctorSuccess = () => ({
   type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS,
 });
+
+export const fetchAllScheduleTime = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllcodeService("time");
+      if (res && res.errCode === 0) {
+        //toast.success("Save info doctor succeed");
+        dispatch(fetchAllScheduleTimeSuccess(res.data));
+      } else {
+        //toast.error("Save info a doctor error!");
+        dispatch(fetchAllScheduleTimeFailded());
+      }
+    } catch (e) {
+      //toast.error("Save info a doctor error!");
+      dispatch(fetchAllScheduleTimeFailded());
+    }
+  };
+};
+export const fetchAllScheduleTimeFailded = () => ({
+  type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAIDLED,
+});
+export const fetchAllScheduleTimeSuccess = (data) => ({
+  type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+  time: data,
+});

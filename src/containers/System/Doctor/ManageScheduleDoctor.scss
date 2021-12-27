@@ -1,0 +1,31 @@
+.manage-schedule-container {
+  .m-s-input {
+    align-items: center;
+
+    .input-schedule-time {
+      justify-content: center;
+      .input-schedule-title {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 30px;
+      }
+      .pick-hour-container {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: auto auto auto;
+        background-color: #2196f3;
+        padding: 10px;
+        .m-s-grid-item {
+          background-color: white;
+          border: 1px solid rgba(0, 0, 0, 0.8);
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+          &.active {
+            background-color: rgba(216, 212, 212, 0.8);
+          }
+        }
+      }
+    }
+  }
+}
