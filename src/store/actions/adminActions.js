@@ -275,3 +275,69 @@ export const fetchAllScheduleTimeSuccess = (data) => ({
   type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
   time: data,
 });
+
+export const getDoctorPrice = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllcodeService("PRICE");
+      if (res && res.errCode === 0) {
+        dispatch(fetchDoctorPriceSuccess(res.data));
+      } else {
+        dispatch(fetchDoctorPriceFailed());
+      }
+    } catch (e) {
+      dispatch(fetchDoctorPriceFailed());
+    }
+  };
+};
+export const fetchDoctorPriceSuccess = (doctorPriceData) => ({
+  type: actionTypes.FETCH_DOCTOR_PRICE_SUCCESS,
+  doctorPriceData: doctorPriceData,
+});
+export const fetchDoctorPriceFailed = () => ({
+  type: actionTypes.FETCH_DOCTOR_PRICE_FAILDED,
+});
+
+export const getDoctorPayment = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllcodeService("PAYMENT");
+      if (res && res.errCode === 0) {
+        dispatch(fetchDoctorPaymentSuccess(res.data));
+      } else {
+        dispatch(fetchDoctorPaymentFailed());
+      }
+    } catch (e) {
+      dispatch(fetchDoctorPaymentFailed());
+    }
+  };
+};
+export const fetchDoctorPaymentSuccess = (doctorPaymentData) => ({
+  type: actionTypes.FETCH_DOCTOR_PAYMENT_SUCCESS,
+  doctorPaymentData: doctorPaymentData,
+});
+export const fetchDoctorPaymentFailed = () => ({
+  type: actionTypes.FETCH_DOCTOR_PAYMENT_FAILDED,
+});
+
+export const getDoctorProvince = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllcodeService("PROVINCE");
+      if (res && res.errCode === 0) {
+        dispatch(fetchDoctorProvinceSuccess(res.data));
+      } else {
+        dispatch(fetchDoctorProvinceFailed());
+      }
+    } catch (e) {
+      dispatch(fetchDoctorProvinceFailed());
+    }
+  };
+};
+export const fetchDoctorProvinceSuccess = (doctorProvinceData) => ({
+  type: actionTypes.FETCH_DOCTOR_PROVINCE_SUCCESS,
+  doctorProvinceData: doctorProvinceData,
+});
+export const fetchDoctorProvinceFailed = () => ({
+  type: actionTypes.FETCH_DOCTOR_PROVINCE_FAILDED,
+});

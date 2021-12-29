@@ -40,7 +40,16 @@
       "manage-handbook": "Quản lý cẩm nang"
     },
     "doctor": {
-      "manage-schedule": "Kế hoạch khám bệnh"
+      "manage-schedule": "Kế hoạch khám bệnh",
+      "schedule": "Lịch khám bệnh",
+      "manage-doctor": "Quản lý Bác sĩ",
+      "infor": "Thông tin giới thiệu",
+      "price": "Giá khám bệnh",
+      "payment": "Phương thức thanh toán",
+      "province": "Tỉnh thành",
+      "clinic-name": "Tên phòng khám",
+      "clinic-address": "Địa chỉ phòng khám",
+      "note": "Ghi chú"
     }
   },
   "manage-user": {

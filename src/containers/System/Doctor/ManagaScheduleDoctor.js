@@ -2,14 +2,15 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import Select from "react-select";
-import { LANGUAGES, dateFormat } from "../../../utils";
+import { LANGUAGES } from "../../../utils";
 import * as actions from "../../../store/actions";
 import "./ManageScheduleDoctor.scss";
 import DatePicker from "../../../components/Input/DatePicker";
-import moment from "moment";
 import { toast } from "react-toastify";
 import { saveBulkScheduleDoctor } from "../../../services/userService";
 import _ from "lodash";
+import moment from "moment";
+import localization from "moment/locale/vi";
 //import FormattedDate from "../../../components/Formating/FormattedDate";
 class ManageScheduleDoctor extends Component {
   constructor(props) {
@@ -108,7 +109,7 @@ class ManageScheduleDoctor extends Component {
         selectedTime.map((item) => {
           let object = {};
           object.doctorID = selectedDoctor.value;
-          object.date = formatDate;
+          object.date = "" + formatDate;
           object.timeType = item.keyMap;
           result.push(object);
         });
@@ -122,14 +123,18 @@ class ManageScheduleDoctor extends Component {
     let res = await saveBulkScheduleDoctor({
       arrSchedule: result,
       doctorID: selectedDoctor.value,
-      date: formatDate,
+      date: "" + formatDate,
     });
+    if (res && res.errCode === 0) {
+      toast.success("Choose schedule cuccess");
+    }
     console.log("check res save bulk create", res);
   };
   render() {
     const { isLoggedIn } = this.props;
     let { allDoctors, rangeTime } = this.state;
     let language = this.props.lang;
+    let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
     return (
       <React.Fragment>
         <div className="container manage-schedule-container">
@@ -160,7 +165,7 @@ class ManageScheduleDoctor extends Component {
                   onChange={this.handleOnchangeDatepicker}
                   className="form-control"
                   value={this.state.currentDate}
-                  minDate={new Date()}
+                  minDate={yesterday}
                 />
               </form>
             </div>

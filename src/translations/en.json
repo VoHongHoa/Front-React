@@ -40,7 +40,16 @@
       "manage-handbook": "Manage Handbook"
     },
     "doctor": {
-      "manage-schedule": "Manage Doctor Schedule"
+      "manage-schedule": "Manage Doctor Schedule",
+      "schedule": "Schedule Doctor",
+      "manage-doctor": "Manage Doctor",
+      "infor": "Introduction",
+      "price": "Price",
+      "payment": "Payment",
+      "province": "Province",
+      "clinic-name": "Clinic name",
+      "clinic-address": "Clinic address",
+      "note": "Note"
     }
   },
   "manage-user": {

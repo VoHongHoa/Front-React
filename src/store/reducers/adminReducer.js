@@ -8,6 +8,10 @@ const initialState = {
   topDoctors: [],
   allDoctors: [],
   time: [],
+
+  doctorPriceData: [],
+  doctorPaymentData: [],
+  doctorProvinceData: [],
 };
 
 const adminReducer = (state = initialState, action) => {
@@ -100,6 +104,42 @@ const adminReducer = (state = initialState, action) => {
       };
     case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAIDLED:
       state.time = [];
+      return {
+        ...state,
+      };
+
+    case actionTypes.FETCH_DOCTOR_PRICE_SUCCESS:
+      state.doctorPriceData = action.doctorPriceData;
+      //console.log(action);
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_DOCTOR_PRICE_FAILDED:
+      state.doctorPriceData = [];
+      return {
+        ...state,
+      };
+
+    case actionTypes.FETCH_DOCTOR_PAYMENT_SUCCESS:
+      state.doctorPaymentData = action.doctorPaymentData;
+      //console.log(action);
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_DOCTOR_PAYMENT_FAILDED:
+      state.doctorPaymentData = [];
+      return {
+        ...state,
+      };
+
+    case actionTypes.FETCH_DOCTOR_PROVINCE_SUCCESS:
+      state.doctorProvinceData = action.doctorProvinceData;
+      //console.log(action);
+      return {
+        ...state,
+      };
+    case actionTypes.FETCH_DOCTOR_PROVINCE_FAILDED:
+      state.doctorProvinceData = [];
       return {
         ...state,
       };

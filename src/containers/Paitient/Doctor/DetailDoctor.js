@@ -5,11 +5,13 @@ import Footer from "../../HomePage/Footer";
 import "./DetailDoctor.scss";
 import { getDetailInforDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils/constant";
+import DoctorSchedule from "./DoctorSchedule";
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
     this.state = {
       detailDoctor: {},
+      currentDoctorId: -1,
     };
   }
   async componentDidMount() {
@@ -19,6 +21,9 @@ class DetailDoctor extends Component {
       this.props.match.params.id
     ) {
       let id = this.props.match.params.id;
+      this.setState({
+        currentDoctorId: id,
+      });
       let res = await getDetailInforDoctor(id);
       //console.log("check data res", res);
       if (res && res.errCode === 0) {
@@ -31,7 +36,7 @@ class DetailDoctor extends Component {
   componentDidUpdate(prevProp, sprevState, snapshot) {}
   render() {
     // // {this.props.isLoggedIn && <Header />}
-    console.log("check state", this.state);
+    //console.log("check state", this.state);
     // // console.log(this.props.match.params.id);
     let { language } = this.props;
 
@@ -74,7 +79,12 @@ class DetailDoctor extends Component {
               </div>
             </div>
           </div>
-          <div className="schedule-doctor"></div>
+          <div className="schedule-doctor row mt-3">
+            <div className="content-left col-8 ">
+              <DoctorSchedule doctorID={this.state.currentDoctorId} />
+            </div>
+            <div className="content-right col-4"></div>
+          </div>
           <div className="detail-info-doctor">
             {detailDoctor &&
               detailDoctor.Markdown &&
