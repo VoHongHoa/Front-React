@@ -6,6 +6,7 @@ import "./DetailDoctor.scss";
 import { getDetailInforDoctor } from "../../../services/userService";
 import { LANGUAGES } from "../../../utils/constant";
 import DoctorSchedule from "./DoctorSchedule";
+import DoctorExtraInfor from "./DoctorExtraInfor";
 class DetailDoctor extends Component {
   constructor(props) {
     super(props);
@@ -83,7 +84,9 @@ class DetailDoctor extends Component {
             <div className="content-left col-8 ">
               <DoctorSchedule doctorID={this.state.currentDoctorId} />
             </div>
-            <div className="content-right col-4"></div>
+            <div className="content-right col-4">
+              <DoctorExtraInfor doctorID={this.state.currentDoctorId} />
+            </div>
           </div>
           <div className="detail-info-doctor">
             {detailDoctor &&
@@ -96,7 +99,7 @@ class DetailDoctor extends Component {
                 ></div>
               )}
           </div>
-          <div className="comment-doctor"></div>
+          <div className="content-doctor"></div>
         </div>
         <Footer />
       </React.Fragment>

@@ -22,10 +22,9 @@
     align-items: center;
     .customize {
       text-align: center;
+      cursor: pointer;
       .img-customize {
         height: 200px;
-        background: url("../../../assets/speicalty1.jpg") center center
-          no-repeat;
       }
       p {
         margin-top: 10px;

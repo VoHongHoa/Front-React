@@ -1,0 +1,31 @@
+.detailspecialty-container {
+  background-color: rgb(242, 242, 243);
+  padding-bottom: 3rem;
+  .detailspecialty-up {
+    padding: 0 40px;
+    background-color: white;
+  }
+
+  .detailspecialty-down {
+    .detail-doctor {
+      background-color: white;
+      border-radius: 10px;
+      margin: 20px 0px;
+      .doctor-infor {
+        padding: 10px;
+        border-right: 2px solid rgb(242, 242, 243);
+      }
+      .doctor-schedule {
+        padding: 10px;
+      }
+    }
+    .no-data {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      color: rgb(33, 150, 243);
+    }
+  }
+}

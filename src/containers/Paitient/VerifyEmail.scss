@@ -1,0 +1,42 @@
+.verify-email-container {
+  .verify-email-content {
+    .verify-email-failed {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .verify-email-failed-img {
+        height: 400px;
+        width: 400px;
+        background: url("../../assets/Crockpot-Express-E6-Error-Code.png")
+          center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .verify-email-failed-text {
+        font-size: 60px;
+        color: rgb(33, 150, 243);
+        text-align: center;
+      }
+    }
+    .verify-email-sussced {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      .verify-email-sussced-img {
+        height: 400px;
+        width: 400px;
+        background: url("../../assets/b763fef1f0fc703732f0e544c1cf65fc.jpg")
+          center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .verify-email-sussced-text {
+        font-size: 60px;
+        color: rgb(33, 150, 243);
+        text-align: center;
+      }
+    }
+  }
+}

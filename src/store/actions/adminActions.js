@@ -8,6 +8,7 @@ import {
   getTopDoctorHomeservice,
   getAllDoctors,
   saveDetailDoctor,
+  getAllSpecialty,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 //Gender
@@ -340,4 +341,27 @@ export const fetchDoctorProvinceSuccess = (doctorProvinceData) => ({
 });
 export const fetchDoctorProvinceFailed = () => ({
   type: actionTypes.FETCH_DOCTOR_PROVINCE_FAILDED,
+});
+
+export const fetchAllSpecialty = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllSpecialty();
+      console.log(res);
+      if (res && res.errCode === 0) {
+        dispatch(fetchAllSpecialtySuccess(res.data));
+      } else {
+        dispatch(fetchAllSpecialtyFailed());
+      }
+    } catch (e) {
+      dispatch(fetchAllSpecialtyFailed());
+    }
+  };
+};
+export const fetchAllSpecialtySuccess = (data) => ({
+  type: actionTypes.FETCH_ALL_SPECIALTY_SUCCESS,
+  allSpecialty: data,
+});
+export const fetchAllSpecialtyFailed = () => ({
+  type: actionTypes.FETCH_ALL_SPECIALTY_FAILDED,
 });
