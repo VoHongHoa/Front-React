@@ -8,6 +8,7 @@ export const path = {
   DOCTOR: "/doctor",
   VERIFY_DOCTOR: "/verify-booking",
   DetailSpecialty: "/detail-specialty/:specialtyID",
+  DetailClinic: "/detail-clinic/:clinicID",
 };
 
 export const LANGUAGES = {

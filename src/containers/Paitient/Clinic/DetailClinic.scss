@@ -1,0 +1,24 @@
+.detail-clinic-container {
+  .detail-clinic-img {
+    height: 300px;
+  }
+  .clinic-title {
+    .col-8 {
+      display: flex;
+      gap: 20px;
+      .clinic-infor {
+        display: flex;
+        flex-direction: column;
+        .clinic-name {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        .clinic-address {
+          display: flex;
+          gap: 5px;
+          align-items: center;
+        }
+      }
+    }
+  }
+}

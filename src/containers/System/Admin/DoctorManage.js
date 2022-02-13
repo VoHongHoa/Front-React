@@ -52,6 +52,7 @@ class DoctorManage extends Component {
     this.props.getDoctorPayment();
     this.props.getDoctorProvince();
     this.props.fetchAllSpecialty();
+    this.props.fetchAllClinic();
   }
   buildDataInput = (inputData) => {
     let result = [];
@@ -114,6 +115,15 @@ class DoctorManage extends Component {
           result.push(object);
         });
       }
+      if (name && name === "Clinic") {
+        inputData.map((item, index) => {
+          let object = {};
+          let label = item.name;
+          object.value = item.id;
+          object.label = label;
+          result.push(object);
+        });
+      }
     }
     //console.log(result);
     return result;
@@ -160,6 +170,16 @@ class DoctorManage extends Component {
       );
       this.setState({
         listSpecialty: dataSpecialty,
+      });
+    }
+    if (prevProps.allClinic !== this.props.allClinic) {
+      //console.log(this.props.allSpecialty)
+      let dataClinic = this.buildDoctorInforInput(
+        this.props.allClinic,
+        "Clinic"
+      );
+      this.setState({
+        listClinic: dataClinic,
       });
     }
     if (prevProps.lang !== this.props.lang) {
@@ -222,7 +242,8 @@ class DoctorManage extends Component {
   };
   handleChangeSelect = async (selectedOption) => {
     this.setState({ selectedDoctor: selectedOption });
-    let { listPrice, listPayment, listProvince, listSpecialty } = this.state;
+    let { listPrice, listPayment, listProvince, listSpecialty, listClinic } =
+      this.state;
 
     let res = await getDetailInforDoctor(selectedOption.value);
     if (res && res.errCode === 0 && res.data && res.data.Markdown) {
@@ -233,11 +254,13 @@ class DoctorManage extends Component {
         paymentID = "",
         priceID = "",
         provinceID = "",
+        clinicID = "",
         selectedPayment = "",
         selectedPrice = "",
         selectedProvince = "",
         specialtyID = "",
-        selectedSpecialty = "";
+        selectedSpecialty = "",
+        selectedClinic = "";
 
       if (res.data.Doctor_infor) {
         addressClinic = res.data.Doctor_infor.addressClinic;
@@ -247,6 +270,7 @@ class DoctorManage extends Component {
         priceID = res.data.Doctor_infor.priceID;
         provinceID = res.data.Doctor_infor.provinceID;
         specialtyID = res.data.Doctor_infor.specialtyID;
+        clinicID = res.data.Doctor_infor.clinicID;
 
         selectedPayment = listPayment.find((item) => {
           if (item.value === paymentID) {
@@ -268,6 +292,11 @@ class DoctorManage extends Component {
             return item.label;
           }
         });
+        selectedClinic = listClinic.find((item) => {
+          if (item.value === clinicID) {
+            return item.label;
+          }
+        });
         //console.log("tim item", listPrice);
       }
 
@@ -282,6 +311,7 @@ class DoctorManage extends Component {
         selectedPrice: selectedPrice,
         selectedProvince: selectedProvince,
         selectedSpecialty: selectedSpecialty,
+        selectedClinic: selectedClinic,
         hasOldData: true,
       });
     } else {
@@ -296,6 +326,7 @@ class DoctorManage extends Component {
         selectedPrice: "",
         selectedProvince: "",
         selectedSpecialty: "",
+        selectedClinic: "",
         hasOldData: false,
       });
     }
@@ -320,6 +351,7 @@ class DoctorManage extends Component {
       listPayment,
       listProvince,
       listSpecialty,
+      listClinic,
     } = this.state;
     //console.log(this.state);
     return (
@@ -494,6 +526,7 @@ const mapStateToProps = (state) => {
     doctorPaymentData: state.admin.doctorPaymentData,
     doctorProvinceData: state.admin.doctorProvinceData,
     allSpecialty: state.admin.allSpecialty,
+    allClinic: state.admin.allClinic,
   };
 };
 
@@ -506,6 +539,7 @@ const mapDispatchToProps = (dispatch) => {
     actionSaveDetailDoctor: (data) =>
       dispatch(actions.actionSaveDetailDoctor(data)),
     fetchAllSpecialty: () => dispatch(actions.fetchAllSpecialty()),
+    fetchAllClinic: () => dispatch(actions.fetchAllClinic()),
   };
 };
 

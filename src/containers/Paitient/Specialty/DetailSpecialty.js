@@ -20,29 +20,6 @@ class DetailSpecialty extends Component {
   }
   async componentDidMount() {
     this.props.getDoctorProvince();
-    // if (this.props.location && this.props.location.search) {
-    //   const urlSearch = new URLSearchParams(this.props.location.search);
-    //   let specialtyID = urlSearch.get("specialtyID");
-    //   let provinceID = urlSearch.get("provinceID");
-    //   console.log(provinceID);
-    //   //console.log(specialtyID, provinceID);
-    //   let res = await getDetailSpecialtyById({
-    //     specialtyID: specialtyID,
-    //     provinceID: "PRO2",
-    //   });
-    //   console.log("check data res", res);
-    //   if (res && res.errCode === 0) {
-    //     this.setState({
-    //       specialInfor: res.data.specialInfor,
-    //       allDoctocFromSpecialty:
-    //         res.data.allDoctocFromSpecialty &&
-    //         res.data.allDoctocFromSpecialty.length > 0
-    //           ? res.data.allDoctocFromSpecialty
-    //           : [],
-    //     });
-    //   }
-    // }
-
     if (
       this.props.match &&
       this.props.match.params &&

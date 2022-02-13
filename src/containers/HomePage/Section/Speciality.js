@@ -44,7 +44,7 @@ class Speciality extends Component {
       slidesToScroll: 1,
     };
     let { arrSpecialty } = this.state;
-    console.log("check chuyen khoa", arrSpecialty);
+    //console.log("check chuyen khoa", arrSpecialty);
     return (
       <div className="section-specialty">
         <div className="section-header">
@@ -73,7 +73,7 @@ class Speciality extends Component {
                       style={{
                         backgroundImage: `url(${imageBase64})`,
                         backgroundRepeat: "no-repeat",
-                        backgroundSize: "contain",
+                        backgroundSize: "cover",
                         backgroundPosition: "center",
                       }}
                     ></div>

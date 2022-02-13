@@ -33,7 +33,7 @@ class Header extends Component {
     this.setState({
       menuApp: menu,
     });
-    console.log("check user info", userInfo);
+    //console.log("check user info", userInfo);
   }
   render() {
     const { processLogout, userInfo } = this.props;

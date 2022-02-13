@@ -21,15 +21,18 @@
     justify-content: center;
     align-items: center;
     .customize {
-      text-align: center;
+      cursor: pointer;
       .img-customize {
         height: 200px;
-        background: url("../../../assets/speicalty1.jpg") center center
-          no-repeat;
+        width: 80%;
+        margin: 0 auto;
+        // transform: translateX(-50%);
+        //background-repeat: no-repeat;
       }
       p {
         margin-top: 10px;
-        font-size: 24px;
+        font-size: 16px;
+        text-align: center;
       }
     }
     .slick-slider {
@@ -38,6 +41,11 @@
       .slick-list {
         top: 50%;
         transform: translateY(-50%);
+        // .slick-track {
+        //   .slick-slide {
+        //     //gap: 30px;
+        //   }
+        // }
       }
 
       .slick-prev:before,

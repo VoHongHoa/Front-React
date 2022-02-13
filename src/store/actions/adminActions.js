@@ -9,6 +9,7 @@ import {
   getAllDoctors,
   saveDetailDoctor,
   getAllSpecialty,
+  getAllClinic,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 //Gender
@@ -347,7 +348,7 @@ export const fetchAllSpecialty = () => {
   return async (dispatch, getState) => {
     try {
       let res = await getAllSpecialty();
-      console.log(res);
+      //console.log(res);
       if (res && res.errCode === 0) {
         dispatch(fetchAllSpecialtySuccess(res.data));
       } else {
@@ -364,4 +365,27 @@ export const fetchAllSpecialtySuccess = (data) => ({
 });
 export const fetchAllSpecialtyFailed = () => ({
   type: actionTypes.FETCH_ALL_SPECIALTY_FAILDED,
+});
+
+export const fetchAllClinic = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllClinic();
+      //console.log(res);
+      if (res && res.errCode === 0) {
+        dispatch(fetchAllClinicSuccess(res.data));
+      } else {
+        dispatch(fetchAllClinicFailed());
+      }
+    } catch (e) {
+      dispatch(fetchAllClinicFailed());
+    }
+  };
+};
+export const fetchAllClinicSuccess = (data) => ({
+  type: actionTypes.FETCH_ALL_CLINIC_SUCCESS,
+  allClinic: data,
+});
+export const fetchAllClinicFailed = () => ({
+  type: actionTypes.FETCH_ALL_CLINIC_FAILDED,
 });
