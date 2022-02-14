@@ -19,7 +19,7 @@ export const fetchGenderStart = () => {
       dispatch({
         type: actionTypes.FETCH_GENDER_START,
       });
-      let res = await getAllcodeService("gender");
+      let res = await getAllcodeService("GENDER");
       if (res && res.errCode === 0) {
         dispatch(fetchGenderSuccess(res.data));
       } else {
@@ -42,7 +42,7 @@ export const fetchGenderFailed = () => ({
 export const fetchPositionStart = () => {
   return async (dispatch, getState) => {
     try {
-      let res = await getAllcodeService("position");
+      let res = await getAllcodeService("POSITION");
       if (res && res.errCode === 0) {
         dispatch(fetchPositionSuccess(res.data));
       } else {
@@ -65,7 +65,7 @@ export const fetchPositionFailed = () => ({
 export const fetchRoleStart = () => {
   return async (dispatch, getState) => {
     try {
-      let res = await getAllcodeService("role");
+      let res = await getAllcodeService("ROLE");
       if (res && res.errCode === 0) {
         dispatch(fetchRoleSuccess(res.data));
       } else {
@@ -256,7 +256,7 @@ export const actionSaveDoctorSuccess = () => ({
 export const fetchAllScheduleTime = () => {
   return async (dispatch, getState) => {
     try {
-      let res = await getAllcodeService("time");
+      let res = await getAllcodeService("TIME");
       if (res && res.errCode === 0) {
         //toast.success("Save info doctor succeed");
         dispatch(fetchAllScheduleTimeSuccess(res.data));

@@ -15,7 +15,7 @@ class Speciality extends Component {
     };
   }
   handelViewDetailSpecialty = (specialty) => {
-    this.props.history.push(`/detail-specialty/${specialty.id}"`);
+    this.props.history.push(`/detail-specialty/${specialty.id}`);
   };
   async componentDidMount() {
     this.props.fetchAllSpecialty();
